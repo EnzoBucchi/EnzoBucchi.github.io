@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  background-color: black;
+}
+
+.noise {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.6;
+  background-image: url("../images/noise.gif");
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 1;
+}
