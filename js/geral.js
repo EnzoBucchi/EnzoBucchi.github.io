@@ -4,9 +4,6 @@ function start() {
   document.querySelector(".opening").style.backgroundSize = "300%";
 
   btn = document.querySelector(".btn");
-  btn.style.animation = "none";
-  btn.style.width = "18000px";
-  btn.style.height = "18000px";
   btn.classList.add("is-clicked");
   btn.innerHTML = "";
 
@@ -15,6 +12,6 @@ function start() {
   }, 300);
 
   setTimeout(function () {
-    window.location.href = "#principal";
+    window.location.href = "#pey";
   }, 3000);
 }
