@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>PEY</title>
+    <title>01010000 01000101 01011001</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="css/global.css" />
+    <link rel="stylesheet" type="text/css" href="/css/global.css" />
+    <link rel="icon" type="image/png" href="/images/eye.png" />
+    <script type="text/javascript" src="/js/geral.js"></script>
   </head>
   <body>
-    <audio autoplay="autoplay" loop>
+    <!-- Audio -->
+    <audio id="audio" loop="loop">
       <source src="/music/Awakenings.mp3" type="audio/mp3" />
     </audio>
+
+    <!-- Noise effect -->
     <main class="noise"></main>
+
+    <!-- Opening -->
+    <main class="opening">
+      <div class="btn" onclick="start()"><p>Start Link</p></div>
+    </main>
+
+    <a name="principal"></a>
+    <main class="principal">
+      <div class="content"></div>
+    </main>
   </body>
 </html>

@@ -3,7 +3,7 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
-  scroll-behavior: smooth;
+  overflow: hidden;
   background-color: black;
 }
 
@@ -11,7 +11,7 @@
   display: block;
   width: 100%;
   height: 100vh;
-  opacity: 0.6;
+  opacity: 0.3;
   background-image: url("../images/noise.gif");
   overflow: hidden;
   position: fixed;
@@ -19,4 +19,95 @@
   left: 0;
   pointer-events: none;
   z-index: 1;
+}
+
+.opening {
+  background-image: url("../images/portal.gif");
+  background-size: cover;
+  background-size: 100%;
+  background-position: center;
+  transition: background-size 3s cubic-bezier(0.8, 0.3, 1, 0.05);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.principal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  overflow: auto;
+}
+
+.principal .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(135, 206, 235, 0.8) ;
+  width: 80%;
+  height: 200vh;
+}
+
+/* Button */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 100px;
+  letter-spacing: -1px;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(to bottom, cyan 0%, dodgerblue 100%);
+  opacity: 1;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  overflow: hidden;
+  transition: height 1.5s linear, width 1.5s linear;
+}
+
+.btn p {
+  background: none;
+}
+
+.btn.is-clicked {
+  background: radial-gradient(rgb(0, 0, 0, 0.6) 40%, white);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.6;
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 15px whitesmoke;
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 skyblue;
+    opacity: 0.6;
+  }
+}
+/* ------ */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: black;
+}
+::-webkit-scrollbar-thumb {
+  background-color: skyblue;
+  border-radius: 20px;
+  border: 3px solid black;
 }
