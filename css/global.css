@@ -1,141 +1,115 @@
-* {
+:root {
+  --primary: #fff;
+  --bg-color: rgb(5, 53, 61);
+  --bg-envelope-color: #f5edd1;
+  --envelope-tab: #ecdeb8;
+  --envelope-cover: #e6cfa7;
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  --txt-color: #444;
+  --heart-color: rgb(252, 8, 231);
+}
+body {
   margin: 0;
   padding: 0;
-  list-style: none;
-  text-decoration: none;
-  overflow: hidden;
-  background-color: black;
+  box-sizing: border-box;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-
-.noise {
-  display: block;
-  width: 100%;
+.container {
   height: 100vh;
-  opacity: 0.3;
-  background-image: url("../images/noise.gif");
-  overflow: hidden;
-  position: fixed;
+  display: grid;
+  place-items: center;
+}
+.container > .envelope-wrapper {
+  background: var(--bg-envelope-color);
+  box-shadow: 0 0 40px var(--shadow-color);
+}
+.envelope-wrapper > .envelope {
+  position: relative;
+  width: 600px;
+  height: 460px;
+}
+.envelope-wrapper > .envelope::before {
+  content: "";
+  position: absolute;
   top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 1;
+  z-index: 2;
+  border-top: 260px solid var(--envelope-tab);
+  border-right: 300px solid transparent;
+  border-left: 300px solid transparent;
+  transform-origin: top;
+  transition: all 0.5s ease-in-out 0.7s;
 }
-
-.opening {
-  background-image: url("../images/portal.gif");
-  background-size: cover;
-  background-size: 100%;
-  background-position: center;
-  transition: background-size 3s cubic-bezier(0.8, 0.3, 1, 0.05);
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.envelope-wrapper > .envelope::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 0px;
+  height: 0px;
+  border-top: 260px solid transparent;
+  border-right: 300px solid var(--envelope-cover);
+  border-bottom: 200px solid var(--envelope-cover);
+  border-left: 300px solid var(--envelope-cover);
 }
-
-.pey {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  overflow: auto;
-  opacity: 0.7;
-  background-image: url("../images/circuit.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-.pey .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(135, 206, 235, 0.6);
-  width: 80%;
-  border: 0.2rem solid #fff;
-  animation: pulsate 1.5s infinite alternate;
-}
-
-.content {
-  color: white;
-}
-
-.content img {
-  width: 100%;
-}
-
-@keyframes pulsate {
-  100% {
-    box-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px cyan,
-      0 0 70px cyan, 0 0 80px cyan, 0 0 90px cyan, 0 0 130px cyan;
-  }
-  0% {
-    box-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px cyan,
-      0 0 45px cyan, 0 0 55px cyan, 0 0 70px cyan, 0 0 80px cyan;
-  }
-}
-
-/* Button */
-.btn {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px;
-  height: 100px;
-  text-transform: uppercase;
+.envelope > .letter {
+  position: absolute;
+  right: 20%;
+  bottom: 0;
+  width: 54%;
+  height: 80%;
+  background: var(--primary);
   text-align: center;
-  line-height: 100px;
-  letter-spacing: -1px;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  background: linear-gradient(to bottom, cyan 0%, dodgerblue 100%);
-  opacity: 1;
+  transition: all 1s ease-in-out;
+  box-shadow: 0 0 5px var(--shadow-color);
+  padding: 20px 10px;
+}
+
+.envelope > .letter > .text {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: var(--txt-color);
+  text-align: left;
+  font-size: 10px;
+}
+.heart {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background: var(--heart-color);
+  z-index: 4;
+  transform: translate(-50%, -20%) rotate(45deg);
+  transition: transform 0.5s ease-in-out 1s;
+  box-shadow: 0 1px 6px var(--shadow-color);
   cursor: pointer;
-  animation: pulse 1.5s infinite;
-  overflow: hidden;
-  transition: height 1.5s linear, width 1.5s linear;
 }
-
-.btn p {
-  background: none;
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: var(--heart-color);
+  border-radius: 50%;
 }
-
-.btn.is-clicked {
-  background: radial-gradient(rgb(0, 0, 0, 0.6) 40%, white);
-  width: 18000px;
-  height: 18000px;
-  animation: none;
+.heart:before {
+  top: -7.5px;
 }
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.9);
-    opacity: 0.6;
-  }
-  70% {
-    transform: scale(1);
-    box-shadow: 0 0 0 15px whitesmoke;
-    opacity: 1;
-  }
-  100% {
-    transform: scale(0.9);
-    box-shadow: 0 0 0 0 skyblue;
-    opacity: 0.6;
-  }
+.heart:after {
+  right: 7.5px;
 }
-/* ------ */
-
-::-webkit-scrollbar {
-  width: 10px;
+.flap > .envelope:before {
+  transform: rotateX(180deg);
+  z-index: 0;
 }
-::-webkit-scrollbar-track {
-  background-color: black;
+.flap > .envelope > .letter {
+  bottom: 200px;
+  transform: scale(1.5);
+  transition-delay: 1s;
 }
-::-webkit-scrollbar-thumb {
-  background-color: skyblue;
-  border-radius: 20px;
-  border: 3px solid black;
+.flap > .heart {
+  transform: rotate(90deg);
+  transition-delay: 0.4s;
 }

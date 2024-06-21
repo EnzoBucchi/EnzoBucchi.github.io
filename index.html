@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>01010000 01000101 01011001</title>
+    <title>Teste</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="/css/global.css" />
-    <link rel="icon" type="image/png" href="/images/eye.png" />
     <script type="text/javascript" src="/js/geral.js"></script>
   </head>
   <body>
-    <!-- Audio -->
-    <audio id="audio" loop="loop">
-      <source src="/music/Awakenings.mp3" type="audio/mp3" />
-    </audio>
-
-    <!-- Noise effect -->
-    <main class="noise"></main>
-
-    <!-- Opening -->
-    <main class="opening">
-      <div class="btn" onclick="start()"><p>Start Link</p></div>
-    </main>
-
-    <a name="pey"></a>
-    <main class="pey">
-      <div class="content">
-        <div>
-          <h1>teste PEY</h1>
+    <div class="container">
+      <div class="envelope-wrapper">
+        <div class="envelope">
+          <div class="letter">
+            <div class="text">
+              <strong>Jhennifer,</strong>
+              <p>
+                Quero te lembrar o quanto você é especial para mim. Cada momento
+                ao seu lado é um presente, e sou grato por ter você na minha
+                vida. <br />
+                Te amo e desejo que nosso amor continue crescendo e nos trazendo
+                felicidade. <br />
+                Com todo o meu carinho, Enzo.
+              </p>
+            </div>
+          </div>
         </div>
-
-        <img src="/images/pey.jpg" />
+        <div class="heart"></div>
       </div>
-    </main>
+    </div>
+    <script>
+      const envelope = document.querySelector(".envelope-wrapper");
+      envelope.addEventListener("click", () => {
+        envelope.classList.toggle("flap");
+      });
+    </script>
   </body>
 </html>
