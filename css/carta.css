@@ -6,7 +6,7 @@
   --envelope-cover: #e6cfa7;
   --shadow-color: rgba(0, 0, 0, 0.2);
   --txt-color: #444;
-  --heart-color: rgb(252, 8, 231);
+  --heart-color: #aa1151;
 }
 body {
   margin: 0;
@@ -112,4 +112,26 @@ body {
 .flap > .heart {
   transform: rotate(90deg);
   transition-delay: 0.4s;
+}
+
+.hidden {
+  display: none;
+}
+
+.continue-button {
+  position: absolute;
+  bottom: 5%;
+  padding: 0.4rem;
+  background: linear-gradient(to left, #841313, #aa1151);
+  cursor: pointer;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 300;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.continue-button:hover {
+  letter-spacing: 0.5px;
+  background: linear-gradient(to right, #841313, #aa1151);
 }

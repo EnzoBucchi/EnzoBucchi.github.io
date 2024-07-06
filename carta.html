@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <title>Nova mensagem!</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="/css/carta.css" />
+  </head>
+    <div class="container">
+      <div class="envelope-wrapper">
+        <div class="envelope">
+          <div class="letter">
+            <div class="text">
+              <strong>Jhennifer,</strong>
+              <p>
+                Quero te lembrar o quanto você é especial para mim. Cada momento
+                ao seu lado é um presente, e sou grato por ter você na minha
+                vida. <br />
+                Te amo e desejo que nosso amor continue crescendo e nos trazendo
+                felicidade. <br /><br />
+                Com todo o meu carinho, Enzo.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="heart"></div>
+      </div>
+    </div>
+    <button class="continue-button hidden" onclick="location.href='/index.html'">Continuar</button>
+    <script>
+      const button = document.querySelector(".continue-button");
+      const envelope = document.querySelector(".envelope-wrapper");
+      envelope.addEventListener("click", () => {
+        envelope.classList.toggle("flap");
+        button.classList.toggle("hidden");
+      });
+    </script>
+  </body>
+</html>

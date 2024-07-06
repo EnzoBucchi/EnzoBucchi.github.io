@@ -1,36 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-    <title>Nova mensagem!</title>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="/css/carta.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="envelope-wrapper">
-        <div class="envelope">
-          <div class="letter">
-            <div class="text">
-              <strong>Jhennifer,</strong>
-              <p>
-                Quero te lembrar o quanto você é especial para mim. Cada momento
-                ao seu lado é um presente, e sou grato por ter você na minha
-                vida. <br />
-                Te amo e desejo que nosso amor continue crescendo e nos trazendo
-                felicidade. <br /><br />
-                Com todo o meu carinho, Enzo.
-              </p>
-            </div>
+    <div class="grid">
+      <div class="container">
+        <h2>Bem-vinda, Jhennifer!</h2>
+        <img
+          src="/imagens/login.png"
+          alt="Us"
+          width="110"
+          height="110"
+          class="img-log"
+        />
+        <form action="">
+          <div class="inputs">
+            <input type="password" id="password" placeholder="Senha" />
+            <div class="underline"></div>
           </div>
-        </div>
-        <div class="heart"></div>
+          <input type="submit" onclick="log(); return false" />
+          <div class="dica">Dica: data do nosso primeiro encontro (dd/mm).</div>
+        </form>
       </div>
     </div>
+
     <script>
-      const envelope = document.querySelector(".envelope-wrapper");
-      envelope.addEventListener("click", () => {
-        envelope.classList.toggle("flap");
-      });
+      function log() {
+        var senha = document.getElementById("password").value;
+
+        if (senha == "01/05") {
+          alert("Parabéns bb!");
+          location.href = "/carta.html";
+        } else {
+          alert("Errado, tente novamente!");
+        }
+      }
     </script>
   </body>
 </html>
